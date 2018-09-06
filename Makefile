@@ -1,11 +1,19 @@
 VERSION = 1.0
 BUILD = 1
+current_dir = $(shell pwd)
 
 all:
 	make -C usr/src/cmd -f Makefile.linux
 
 memcheck:
 	make -C usr/src/cmd -f Makefile.linux memcheck
+
+test:
+	make -C usr/src/cmd -f Makefile.linux install DESTDIR=$(current_dir)/test
+	make -C test all
+
+install:
+	make -C usr/src/cmd -f Makefile.linux install
 
 rpm: tarball
 	mkdir rpm
@@ -25,6 +33,9 @@ zipfile: clean
 clean:
 	make -C usr/src/cmd -f Makefile.linux clean
 	rm -rf rpm
+	rm -rf test/bin
 	rm -rf onnv-linux-$(VERSION)
 	rm -rf onnv-linux-$(VERSION).tar.gz
 	rm -rf onnv-linux-$(VERSION).zip
+
+.PHONY: test
