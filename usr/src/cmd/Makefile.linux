@@ -15,6 +15,11 @@ clean:
 all:
 	$(SUBDIRS)
 
+memcheck:
+	for dir in $(SUBDIRS); do \
+	  make -C $$dir -f Makefile.linux memcheck;\
+	done
+
 install:
 	for dir in $(SUBDIRS); do \
 	  pushd $$dir; pwd; $(MAKE) -f Makefile.linux install;\

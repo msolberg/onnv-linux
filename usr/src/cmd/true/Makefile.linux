@@ -41,6 +41,9 @@ all: $(PROG)
 install: $(PROG)
 	install -D $(PROG) $(DESTDIR)/bin/$(PROG)
 
+memcheck: $(PROG)
+	valgrind -v --leak-check=full --show-reachable=yes $(PROG)
+
 clean:
 	rm ${PROG}
 

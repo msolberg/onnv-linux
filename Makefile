@@ -3,6 +3,9 @@ VERSION = 1.0
 all:
 	make -C usr/src/cmd -f Makefile.linux
 
+memcheck:
+	make -C usr/src/cmd -f Makefile.linux memcheck
+
 tarball: clean
 	mkdir onnv-linux-$(VERSION)
 	cp -R usr onnv-linux-$(VERSION)/usr
