@@ -1,6 +1,6 @@
 Name: onnv-linux
 Version: 1.0
-Release: 1%{?dist}
+Release: %{build_num}%{?dist}
 Summary: Solaris Userspace for Linux
 
 License: CDDL
