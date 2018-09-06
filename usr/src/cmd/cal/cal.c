@@ -37,6 +37,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include <unistd.h>
+#include <libintl.h>
+
 
 static int number(char *);
 static int jan1(const int);
