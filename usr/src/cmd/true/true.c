@@ -33,15 +33,9 @@
  * Exit with a zero value as quickly as possible.
  */
 
-void allocates(void) {
-  char *buffer = malloc(1024);
-}
-
 int
 main(void)
 {
-  allocates();
-  allocates();
 	_exit(0);
 	/*NOTREACHED*/
 	return (0);
