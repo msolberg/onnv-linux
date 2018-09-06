@@ -15,4 +15,10 @@ clean:
 all:
 	$(SUBDIRS)
 
+install:
+	for dir in $(SUBDIRS); do \
+	  pushd $$dir; pwd; $(MAKE) -f Makefile.linux install;\
+          popd; \
+	done
+
 .PHONY: all $(SUBDIRS)

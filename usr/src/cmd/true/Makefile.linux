@@ -38,9 +38,8 @@ CPPFLAGS += -D_FILE_OFFSET_BITS=64
 
 all: $(PROG) 
 
-install: all $(ROOTPROG)
-	-$(RM) $(ROOTBIN)/settime
-	$(LN) -f $(ROOTPROG) $(ROOTBIN)/settime
+install: $(PROG)
+	install -D $(PROG) $(DESTDIR)/bin/$(PROG)
 
 clean:
 	rm ${PROG}
