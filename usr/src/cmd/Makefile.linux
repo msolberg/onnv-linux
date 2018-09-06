@@ -1,0 +1,18 @@
+SUBDIRS := head true
+
+$(SUBDIRS):
+	for dir in $(SUBDIRS); do \
+	  pushd $$dir; pwd; $(MAKE) -f Makefile.linux; \
+	  popd; \
+	done
+
+clean:
+	for dir in $(SUBDIRS); do \
+	  pushd $$dir; pwd; $(MAKE) -f Makefile.linux clean;\
+          popd; \
+	done
+
+all:
+	$(SUBDIRS)
+
+.PHONY: all $(SUBDIRS)
