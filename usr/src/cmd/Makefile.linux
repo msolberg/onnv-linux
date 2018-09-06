@@ -1,4 +1,4 @@
-SUBDIRS := head true
+SUBDIRS := head true cal
 
 $(SUBDIRS):
 	for dir in $(SUBDIRS); do \
