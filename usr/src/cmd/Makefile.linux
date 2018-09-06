@@ -17,7 +17,7 @@ all:
 
 memcheck:
 	for dir in $(SUBDIRS); do \
-	  make -C $$dir -f Makefile.linux memcheck;\
+	  make -C $$dir -f Makefile.linux memcheck || exit $$?;\
 	done
 
 install:
