@@ -37,6 +37,7 @@
                             <value>strlcat</value>
                             <value>strlcpy</value>
                             <value>getopt</value>
+                            <value>gettext</value>
                             <value>csetcol</value>
                             <value>csetlen</value>
                             <value>csetno</value>
@@ -186,6 +187,8 @@
                     regex="strlcat" hint="Function does not exist in the glibc." effort="1"/>
                 <cake:platform-hint language="ALL" source-type="FUNCTION"
                     regex="getopt" hint="getopt() is defined in either unistd.h or getopt.h on Linux, but in stdio.h on Solaris." effort="0"/>
+                <cake:platform-hint language="ALL" source-type="FUNCTION"
+                    regex="gettext" hint="gettext() is defined in either libintl.h on Linux, but in stdio.h on Solaris." effort="0"/>
                 <cake:platform-hint language="ALL" source-type="FUNCTION"
                     regex="csetcol|csetlen|csetno|euclen|euccol|eucscol|getwidth" hint="EUC is not implemented in Linux.  Re-implement with types and functions from wchar.h." effort="0"/>
                 <cake:platform-hint language="ALL" source-type="FUNCTION"

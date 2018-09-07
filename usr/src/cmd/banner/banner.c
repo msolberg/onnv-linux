@@ -31,8 +31,10 @@
 #pragma ident	"%Z%%M%	%I%	%E% SMI"
 
 #include <locale.h>
+#include <libintl.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stddef.h>
 #include <sys/types.h>
 
 #define	nchars 128	/* number of chars in char set */
