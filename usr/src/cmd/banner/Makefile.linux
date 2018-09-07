@@ -42,7 +42,7 @@ install: $(PROG)
 	install -D $(PROG) $(DESTDIR)/bin/$(PROG)
 
 memcheck: $(PROG)
-	valgrind -v --leak-check=full --show-reachable=yes ./$(PROG)
+	valgrind -v --leak-check=full --show-reachable=yes --error-exitcode=1 ./$(PROG) chicken
 
 clean:
 	rm ${PROG}
