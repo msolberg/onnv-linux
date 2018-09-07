@@ -36,7 +36,7 @@
 int
 main(void)
 {
-	_exit(1);
+	_exit(0);
 	/*NOTREACHED*/
 	return (0);
 }
