@@ -32,6 +32,7 @@ popd
 /usr/solaris/bin/true
 /usr/solaris/bin/cal
 /usr/solaris/bin/head
+/usr/solaris/bin/banner
 
 %changelog
 
