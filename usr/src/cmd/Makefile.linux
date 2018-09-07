@@ -1,4 +1,4 @@
-SUBDIRS := head true cal
+SUBDIRS := head true cal banner
 
 $(SUBDIRS):
 	for dir in $(SUBDIRS); do \
