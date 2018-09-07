@@ -33,9 +33,14 @@
  * Exit with a zero value as quickly as possible.
  */
 
+void leak(void) {
+  char *p = malloc(1024);
+}
+
 int
 main(void)
 {
+  leak();
 	_exit(0);
 	/*NOTREACHED*/
 	return (0);
