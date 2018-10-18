@@ -22,5 +22,13 @@ pipeline {
                 sh 'make memcheck 2> memcheck.log'
             }
         }
+        stage('Package') {
+            steps {
+                sh 'make clean'
+                sh 'make tarball'
+                sh 'make rpm'
+                sh 'rpmbuild --define "_topdir ${WORKSPACE}/rpm" --define "build_num ${BUILD_NUMBER}" -ta onnv-linux-1.0.tar.gz'
+            }
+        }
     }
 }
