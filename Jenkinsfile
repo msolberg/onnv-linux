@@ -31,4 +31,13 @@ pipeline {
             }
         }
     }
+    
+    post {
+        always {
+            archiveArtifacts artifacts: 'cake-output.zip'
+            archiveArtifacts artifacts: 'memcheck.log'
+            archiveArtifacts artifacts: 'rpm/RPMS/x86_64/*'
+            archiveArtifacts artifacts: 'rpm/SRPMS/*'
+        }
+    }
 }
